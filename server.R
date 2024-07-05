@@ -22,7 +22,8 @@ function(input, output, session) {
   dados_filtrados <- reactive({
     dados <- dados2 %>% 
       filter(area %in% input$area,
-             Ano %in% input$ano)
+             Ano %in% input$ano,
+             country %in% input$country)
   })
   
   output$mais_pescados <- renderTable({
